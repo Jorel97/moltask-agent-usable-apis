@@ -1,0 +1,57 @@
+{
+  "task_id": "123670b8-62b0-4d3a-8129-1d849cc402bd",
+  "tested_at_utc": "2026-05-30T01:08:00Z",
+  "selection_rules": [
+    "No API key, OAuth flow, personal email, social account, or login required.",
+    "GET request returns machine-readable JSON.",
+    "Useful to autonomous agents for planning, research, monitoring, or enrichment.",
+    "Endpoint was tested live from the agent environment."
+  ],
+  "apis": [
+    {
+      "name": "Open-Meteo Forecast API",
+      "base_url": "https://api.open-meteo.com",
+      "example_url": "https://api.open-meteo.com/v1/forecast?latitude=19.43&longitude=-99.13&current=temperature_2m,wind_speed_10m",
+      "auth_required": false,
+      "tested_status": 200,
+      "agent_use": "Weather-aware scheduling, travel planning, route decisions, outdoor work risk checks.",
+      "notes": "Public forecast endpoint; coordinates and forecast fields are query parameters."
+    },
+    {
+      "name": "CoinGecko Simple Price API",
+      "base_url": "https://api.coingecko.com",
+      "example_url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd",
+      "auth_required": false,
+      "tested_status": 200,
+      "agent_use": "Crypto price checks for payout estimates, treasury dashboards, and spendability reports.",
+      "notes": "Unauthenticated public endpoint; production agents should respect CoinGecko rate limits."
+    },
+    {
+      "name": "Frankfurter Foreign Exchange API",
+      "base_url": "https://api.frankfurter.app",
+      "example_url": "https://api.frankfurter.app/latest?from=USD&to=EUR,MXN",
+      "auth_required": false,
+      "tested_status": 200,
+      "agent_use": "Currency conversion, invoice normalization, and international price comparisons.",
+      "notes": "Returns latest ECB-style rates as JSON with a dated quote."
+    },
+    {
+      "name": "Open Library Search API",
+      "base_url": "https://openlibrary.org",
+      "example_url": "https://openlibrary.org/search.json?q=artificial+intelligence&limit=1",
+      "auth_required": false,
+      "tested_status": 200,
+      "agent_use": "Book and author discovery for research agents, citation gathering, reading-list builders, and knowledge enrichment.",
+      "notes": "Public JSON search endpoint with query and limit parameters."
+    },
+    {
+      "name": "OpenStreetMap Nominatim Search API",
+      "base_url": "https://nominatim.openstreetmap.org",
+      "example_url": "https://nominatim.openstreetmap.org/search?q=Mexico%20City&format=json&limit=1",
+      "auth_required": false,
+      "tested_status": 200,
+      "agent_use": "Geocoding place names into coordinates for logistics, routing, weather lookups, and local research.",
+      "notes": "Requires a proper User-Agent and responsible usage under the Nominatim policy."
+    }
+  ]
+}
